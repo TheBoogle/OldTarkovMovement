@@ -1,0 +1,12 @@
+C:\Users\thebo\source\repos\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\AnimationReplacerPlugin.dll
+C:\Users\thebo\source\repos\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\AnimationReplacerPlugin.pdb
+C:\Users\thebo\source\repos\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\AnimationSystem.Types.dll
+C:\Users\thebo\source\repos\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\Assembly-CSharp.dll
+C:\Users\thebo\source\repos\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\BepInEx.dll
+C:\Users\thebo\source\repos\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\UnityEngine.CoreModule.dll
+C:\Users\thebo\source\repos\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\UnityEngine.dll
+C:\Users\thebo\source\repos\AnimationReplacerPlugin\AnimationReplacerPlugin\obj\Debug\AnimationReplacerPlugin.csproj.AssemblyReference.cache
+C:\Users\thebo\source\repos\AnimationReplacerPlugin\AnimationReplacerPlugin\obj\Debug\AnimationReplacerPlugin.csproj.CoreCompileInputs.cache
+C:\Users\thebo\source\repos\AnimationReplacerPlugin\AnimationReplacerPlugin\obj\Debug\Animatio.9E5914D7.Up2Date
+C:\Users\thebo\source\repos\AnimationReplacerPlugin\AnimationReplacerPlugin\obj\Debug\AnimationReplacerPlugin.dll
+C:\Users\thebo\source\repos\AnimationReplacerPlugin\AnimationReplacerPlugin\obj\Debug\AnimationReplacerPlugin.pdb
