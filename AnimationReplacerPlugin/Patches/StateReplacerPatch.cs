@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AnimationReplacerPlugin
+namespace OldTarkovMovement
 {
     public class StateReplacer : ModulePatch
     {
@@ -22,8 +22,6 @@ namespace AnimationReplacerPlugin
         {
             try
             {
-                Logger.LogInfo("Prefix executed for TargetMethod");
-
                 switch (name)
                 {
                     case EPlayerState.Idle:
@@ -32,20 +30,26 @@ namespace AnimationReplacerPlugin
                     case EPlayerState.Run:
                         __result = new OldRunState(__instance);
                         return false;
-                    case EPlayerState.Sprint:
-                        __result = new TempSprintState(__instance);
-                        return false;
+                    //case EPlayerState.Sprint:
+                    //    __result = new TempSprintState(__instance);
+                    //    return false;
                     // Disabled for now due to issues with sprinting and jumping.
                     // Seems to just make you stop running...
-                    //case EPlayerState.Sprint:
-                    //    __result = new OldSprintState(__instance);
-                    //    return false;
-                    //case EPlayerState.Jump:
-                    //    __result = new OldJumpState(__instance);
-                    //    return false;
-                    //case EPlayerState.Transition:
-                    //    __result = new OldTransitionState(__instance);
-                    //    return false;
+                    case EPlayerState.Sprint:
+                        __result = new OldSprintState(__instance);
+                        return false;
+                    case EPlayerState.Jump:
+                        __result = new OldJumpState(__instance);
+                        return false;
+                    case EPlayerState.Transition:
+                        __result = new OldTransitionState(__instance);
+                        return false;
+                    case EPlayerState.Sidestep:
+                        __result = new OldSidestepState(__instance);
+                        return false;
+                    case EPlayerState.BlindFire:
+                        __result = null;
+                        return false;
                 }
          
                 return true;

@@ -7,8 +7,8 @@
     <ProjectGuid>{A39ECFA5-4CDA-49F3-9CBA-F36AAD8E986E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AnimationReplacerPlugin</RootNamespace>
-    <AssemblyName>AnimationReplacerPlugin</AssemblyName>
+    <RootNamespace>OldTarkovMovement</RootNamespace>
+    <AssemblyName>OldTarkovMovement</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -65,11 +65,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Patches\BushSpeedStateRemover.cs" />
+    <Compile Include="Patches\ProdceduralBlindfire.cs" />
+    <Compile Include="Patches\OldTiltingFix.cs" />
     <Compile Include="Patches\PreSprintAccelerationFix.cs" />
     <Compile Include="Patches\FixForSmoothMotherfuckingSpeed.cs" />
     <Compile Include="States\OldIdleState.cs" />
     <Compile Include="States\OldJumpState.cs" />
     <Compile Include="States\OldRunState.cs" />
+    <Compile Include="States\OldSidestepState.cs" />
     <Compile Include="States\OldSprintState.cs" />
     <Compile Include="Patches\StateReplacerPatch.cs" />
     <Compile Include="Plugin.cs" />

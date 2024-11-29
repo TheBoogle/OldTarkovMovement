@@ -15,10 +15,6 @@ C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\
 W:\SPT310\BepInEx\plugins\AnimationReplacerPlugin.dll
 W:\SPT310\BepInEx\plugins\AnimationReplacerPlugin.pdb
 C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\obj\Debug\Animatio.9E5914D7.Up2Date
-C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\obj\Debug\AnimationReplacerPlugin.dll
-C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\obj\Debug\AnimationReplacerPlugin.pdb
-C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\AnimationReplacerPlugin.dll
-C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\AnimationReplacerPlugin.pdb
 C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\AnimationSystem.Types.dll
 C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\Assembly-CSharp.dll
 C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\BepInEx.dll
@@ -102,3 +98,7 @@ C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\
 C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\Unity.ProBuilder.KdTree.dll
 C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\where-allocations.dll
 C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\Unity.Burst.Unsafe.dll
+C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\OldTarkovMovement.dll
+C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\bin\Debug\OldTarkovMovement.pdb
+C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\obj\Debug\OldTarkovMovement.dll
+C:\Users\thebo\Documents\Github\AnimationReplacerPlugin\AnimationReplacerPlugin\obj\Debug\OldTarkovMovement.pdb

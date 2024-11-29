@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace AnimationReplacerPlugin
+namespace OldTarkovMovement
 {
     public class PreSprintAccelerationFix : ModulePatch
     {
@@ -24,8 +24,6 @@ namespace AnimationReplacerPlugin
         {
             try
             {
-                Logger.LogInfo("Prefix executed for TargetMethod");
-
                 var playerField = typeof(MovementContext).GetField("_player", BindingFlags.NonPublic | BindingFlags.Instance);
 
                 if (playerField != null)

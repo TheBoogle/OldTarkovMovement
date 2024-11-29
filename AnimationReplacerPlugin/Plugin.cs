@@ -1,12 +1,12 @@
-﻿using AnimationReplacer;
-using AnimationReplacerPlugin;
+﻿using OldTarkovMovement;
+using OldTarkovMovement.Patches;
 using BepInEx;
 using System;
 
-namespace AnimationReplacer
+namespace OldTarkovMovement
 {
     [BepInPlugin("com.boogle.animationreplacer.blockfirearmonsprint", "12.11AnimationReplacer", "1.0.3")]
-    public class SprintMod : BaseUnityPlugin
+    public class OldTarkovMovement : BaseUnityPlugin
     {
         public void Awake()
         {
@@ -16,6 +16,9 @@ namespace AnimationReplacer
             {
                 new StateReplacer().Enable();
                 new FixForSmoothMotherfuckingSpeed().Enable();
+                new BushSpeedStateRemover().Enable();
+                new OldTiltingFix().Enable();
+                new ProdceduralBlindfire().Enable();
                 //new PreSprintAccelerationFix().Enable();
             }
             catch (Exception ex)

@@ -21,10 +21,10 @@ public class OldJumpState : MovementState
         this.MovementContext.OnJump();
         this.float_2 = 0f;
         this.int_0 = 0;
-        this.bool_0 = (this.MovementContext.PreviousState is GClass1134);
+        this.bool_0 = (this.MovementContext.PreviousState is OldSprintState);
         this.ejumpState_0 = JumpState.EJumpState.PushingFromTheGround;
         Vector3 inputMotionBeforeLimit = this.MovementContext.InputMotionBeforeLimit;
-        Vector3 vector = (this.MovementContext.PreviousState is GClass1131) ? (this.MovementContext.AbsoluteMovementDirection.normalized / 3f) : Vector3.zero;
+        Vector3 vector = (this.MovementContext.PreviousState is OldRunState) ? (this.MovementContext.AbsoluteMovementDirection.normalized / 3f) : Vector3.zero;
         inputMotionBeforeLimit = new Vector3((Mathf.Abs(inputMotionBeforeLimit.x) > Mathf.Abs(vector.x)) ? inputMotionBeforeLimit.x : vector.x, 0f, (Mathf.Abs(inputMotionBeforeLimit.z) > Mathf.Abs(vector.z)) ? inputMotionBeforeLimit.z : vector.z);
         this.float_1 = inputMotionBeforeLimit.magnitude;
         this.float_0 = this.float_1;
