@@ -30,14 +30,12 @@ namespace OldTarkovMovement
                     case EPlayerState.Run:
                         __result = new OldRunState(__instance);
                         return false;
-                    //case EPlayerState.Sprint:
-                    //    __result = new TempSprintState(__instance);
-                    //    return false;
-                    // Disabled for now due to issues with sprinting and jumping.
-                    // Seems to just make you stop running...
                     case EPlayerState.Sprint:
-                        __result = new OldSprintState(__instance);
+                        __result = new OldSprintStateModern(__instance);
                         return false;
+                    //case EPlayerState.Sprint:
+                    //    __result = new OldSprintState(__instance);
+                    //    return false;
                     case EPlayerState.Jump:
                         __result = new OldJumpState(__instance);
                         return false;

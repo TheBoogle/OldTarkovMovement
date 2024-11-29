@@ -74,6 +74,7 @@
     <Compile Include="States\OldJumpState.cs" />
     <Compile Include="States\OldRunState.cs" />
     <Compile Include="States\OldSidestepState.cs" />
+    <Compile Include="States\OldSprintStateModern.cs" />
     <Compile Include="States\OldSprintState.cs" />
     <Compile Include="Patches\StateReplacerPatch.cs" />
     <Compile Include="Plugin.cs" />
