@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimationReplacerPlugin", "AnimationReplacerPlugin\AnimationReplacerPlugin.csproj", "{A39ECFA5-4CDA-49F3-9CBA-F36AAD8E986E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldTarkovMovementPlugin", "AnimationReplacerPlugin\OldTarkovMovementPlugin.csproj", "{A39ECFA5-4CDA-49F3-9CBA-F36AAD8E986E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
