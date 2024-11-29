@@ -1,10 +1,11 @@
 ﻿using AnimationReplacer;
+using AnimationReplacerPlugin;
 using BepInEx;
 using System;
 
-namespace YourNamespace
+namespace AnimationReplacer
 {
-    [BepInPlugin("com.boogle.animationreplacer.blockfirearmonsprint", "12.11AnimationReplacer", "1.0.2")]
+    [BepInPlugin("com.boogle.animationreplacer.blockfirearmonsprint", "12.11AnimationReplacer", "1.0.3")]
     public class SprintMod : BaseUnityPlugin
     {
         public void Awake()
@@ -13,7 +14,9 @@ namespace YourNamespace
 
             try
             {
-                new EnableSprintPatch().Enable();
+                new StateReplacer().Enable();
+                new FixForSmoothMotherfuckingSpeed().Enable();
+                //new PreSprintAccelerationFix().Enable();
             }
             catch (Exception ex)
             {

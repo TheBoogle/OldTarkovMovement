@@ -34,8 +34,9 @@
     <Reference Include="AnimationSystem.Types">
       <HintPath>libs\AnimationSystem.Types.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>libs\Assembly-CSharp.dll</HintPath>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>W:\SPT310\EscapeFromTarkov_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx, Version=5.4.23.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -58,11 +59,23 @@
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>libs\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>W:\SPT310\EscapeFromTarkov_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Patches\PreSprintAccelerationFix.cs" />
+    <Compile Include="Patches\FixForSmoothMotherfuckingSpeed.cs" />
+    <Compile Include="States\OldIdleState.cs" />
+    <Compile Include="States\OldJumpState.cs" />
+    <Compile Include="States\OldRunState.cs" />
+    <Compile Include="States\OldSprintState.cs" />
+    <Compile Include="Patches\StateReplacerPatch.cs" />
     <Compile Include="Plugin.cs" />
-    <Compile Include="Patch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\OldTransitionState.cs" />
+    <Compile Include="States\TempSprintState.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
