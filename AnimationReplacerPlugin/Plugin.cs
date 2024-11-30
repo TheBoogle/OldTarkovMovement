@@ -18,7 +18,7 @@ namespace OldTarkovMovement
                 new FixForSmoothMotherfuckingSpeed().Enable();
                 new BushSpeedStateRemover().Enable();
                 new OldTiltingFix().Enable();
-                new ProceduralBlindfire().Enable();
+                //new ProceduralBlindfire().Enable();
                 //new BlindfireWhileRunning().Enable();
     
                 //new PreSprintAccelerationFix().Enable();
