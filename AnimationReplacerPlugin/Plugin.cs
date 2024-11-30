@@ -5,12 +5,12 @@ using System;
 
 namespace OldTarkovMovement
 {
-    [BepInPlugin("com.boogle.animationreplacer.blockfirearmonsprint", "12.11AnimationReplacer", "1.0.3")]
+    [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.0.1")]
     public class OldTarkovMovement : BaseUnityPlugin
     {
         public void Awake()
         {
-            Logger.LogInfo("Loading: Animation Replacer");
+            Logger.LogInfo("Loading: Old Tarkov Movement");
 
             try
             {
@@ -19,6 +19,7 @@ namespace OldTarkovMovement
                 new BushSpeedStateRemover().Enable();
                 new OldTiltingFix().Enable();
                 new ProceduralBlindfire().Enable();
+                //new BlindfireWhileRunning().Enable();
                 new SendHandsInteractionStateChangedPatch().Enable();
                 new SetInteractInHandsPatch().Enable();
                 new DisableFancyInteractions().Enable();
@@ -32,7 +33,7 @@ namespace OldTarkovMovement
                 throw;
             }
 
-            Logger.LogInfo("Completed: Animation Replacer");
+            Logger.LogInfo("Completed: Old Tarkov Movement");
         }
     }
 }

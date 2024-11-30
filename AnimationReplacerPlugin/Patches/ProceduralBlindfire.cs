@@ -1,4 +1,5 @@
-﻿using EFT.Animations;
+﻿using EFT;
+using EFT.Animations;
 using SPT.Reflection.Patching;
 using System;
 using System.Reflection;
@@ -82,6 +83,47 @@ namespace OldTarkovMovement.Patches
                 __instance.HandsContainer.HandsRotation.Zero = __instance.RotationZeroSum;
 
                 return false; // Skip the original method
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"SetBlindfireFix Prefix failed: {ex}");
+                return true; // Continue to the original method in case of error
+            }
+        }
+    }
+
+    public class BlindfireWhileRunning : ModulePatch
+    {
+        protected override MethodBase GetTargetMethod()
+        {
+            // Replace with the target method's type and name
+            return typeof(MovementContext).GetMethod("SetBlindFire",
+                BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic,
+                null,
+                new Type[] { typeof(int) }, // Specify the parameter type(s) explicitly
+                null);
+                }
+
+        [PatchPrefix]
+        private static bool Prefix(MovementContext __instance, int b)
+        {
+            try
+            {
+                var playerField = typeof(MovementContext).GetField("_player", BindingFlags.NonPublic | BindingFlags.Instance);
+
+                if (playerField != null)
+                {
+                    Player player = playerField.GetValue(__instance) as Player;
+
+                    if (player.HandsController)
+                    {
+                        player.HandsController.BlindFire(b);
+                    }
+
+                    return false; // Skip the original method
+                }
+
+                return true; // Skip the original method
             }
             catch (Exception ex)
             {
