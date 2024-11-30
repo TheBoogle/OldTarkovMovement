@@ -18,7 +18,7 @@ namespace OldTarkovMovement
         }
 
         [PatchPrefix]
-        private static bool Prefix(MovementContext __instance, ref BaseMovementState __result, EPlayerState name)
+        private static bool Prefix(MovementContext __instance, ref BaseMovementState __result, EPlayerState name, bool isAI = false)
         {
             try
             {
@@ -26,6 +26,13 @@ namespace OldTarkovMovement
                 {
                     case EPlayerState.Idle:
                         __result = new OldIdleState(__instance);
+                        return false;
+                    case EPlayerState.ProneIdle:
+                        if (isAI)
+                        {
+                            return true;
+                        }
+                        __result = new OldProneIdleState(__instance);
                         return false;
                     case EPlayerState.Run:
                         __result = new OldRunState(__instance);

@@ -24,6 +24,10 @@ namespace OldTarkovMovement
                 new SetInteractInHandsPatch().Enable();
                 new DisableFancyInteractions().Enable();
                 new DropbackpackFix().Enable();
+                new TripwireInteractionPatch().Enable();
+                new RepairObjectivePatch().Enable();
+                new BeaconPlacePatch().Enable();
+                new ExfilInteractPatch().Enable();
                 //new PreSprintAccelerationFix().Enable();
             }
             catch (Exception ex)
