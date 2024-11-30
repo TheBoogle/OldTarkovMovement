@@ -20,7 +20,9 @@ namespace OldTarkovMovement
                 new OldTiltingFix().Enable();
                 //new ProceduralBlindfire().Enable();
                 //new BlindfireWhileRunning().Enable();
-    
+                new RepairObjectivePatch().Enable();
+                new BeaconPlacePatch().Enable();
+                new ExfilInteractPatch().Enable();
                 //new PreSprintAccelerationFix().Enable();
             }
             catch (Exception ex)

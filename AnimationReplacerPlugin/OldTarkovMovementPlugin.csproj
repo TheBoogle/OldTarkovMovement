@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Patches\BushSpeedStateRemover.cs" />
+    <Compile Include="Patches\PlantItemPatch.cs" />
     <Compile Include="Patches\ProceduralBlindfire.cs" />
     <Compile Include="Patches\OldTiltingFix.cs" />
     <Compile Include="Patches\PreSprintAccelerationFix.cs" />
