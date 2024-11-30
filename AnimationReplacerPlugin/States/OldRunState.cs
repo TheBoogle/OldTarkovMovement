@@ -142,7 +142,7 @@ public class OldRunState : MovementState
     // Token: 0x06005B9D RID: 23453 RVA: 0x00285C9C File Offset: 0x00283E9C
     protected void method_2(Vector2 inputDirection, Vector2 lerpedDirection)
     {
-        EMovementDirection discreteDirection = GClass1810.ConvertToMovementDirection(inputDirection);
+        EMovementDirection discreteDirection = GClass1669.ConvertToMovementDirection(inputDirection);
         this.MovementContext.PlayerAnimatorSetDiscreteDirection(discreteDirection);
     }
 

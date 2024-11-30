@@ -29,7 +29,7 @@ public class OldStationaryState : OldIdleState
         this.StationaryWeapon = this.MovementContext.StationaryWeapon;
         if (this.OutOfOperationRange)
         {
-            this.MovementContext.DropStationary(GStruct177.EStationaryCommand.Denied);
+            this.MovementContext.DropStationary(GStruct170.EStationaryCommand.Denied);
             return;
         }
         this.bool_2 = false;
@@ -74,7 +74,7 @@ public class OldStationaryState : OldIdleState
             return;
         }
         this.Stage = EStationaryStage.Out;
-        this.MovementContext.DropStationary(GStruct177.EStationaryCommand.Leave);
+        this.MovementContext.DropStationary(GStruct170.EStationaryCommand.Leave);
     }
 
     // Token: 0x06005C25 RID: 23589 RVA: 0x000DA2AB File Offset: 0x000D84AB
@@ -114,7 +114,7 @@ public class OldStationaryState : OldIdleState
         this.bool_2 = true;
         if (this.bool_2 && this.Stage == EStationaryStage.Main)
         {
-            this.MovementContext.DropStationary(GStruct177.EStationaryCommand.Denied);
+            this.MovementContext.DropStationary(GStruct170.EStationaryCommand.Denied);
         }
     }
 
@@ -166,7 +166,7 @@ public class OldStationaryState : OldIdleState
             return;
         }
         this.transform_0 = null;
-        this.MovementContext.SetRotationLimit(Player.GClass1738.FULL_YAW_RANGE, Player.GClass1738.STAND_POSE_ROTATION_PITCH_RANGE);
+        this.MovementContext.SetRotationLimit(Player.GClass1585.FULL_YAW_RANGE, Player.GClass1585.STAND_POSE_ROTATION_PITCH_RANGE);
         this.StationaryWeapon.Unlock(string.Empty);
         this.MovementContext.StationaryWeapon = null;
         this.MovementContext.RotationAction = MovementContext.DefaultRotationFunction;

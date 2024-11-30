@@ -10,7 +10,7 @@ public class OldIdleState : MovementState
     {
         if (!this.MovementContext.IsAI)
         {
-            this.gclass744_0 = new GClass744();
+            this.gclass744_0 = new GClass683();
             this.gclass744_0.Init(movementContext);
         }
     }
@@ -36,7 +36,7 @@ public class OldIdleState : MovementState
         base.Enter(isFromSameState);
         this.MovementContext.EnableSprint(false);
         this.MovementContext.LeftStanceController.SetAnimatorLeftStanceToCacheFromBodyAction(false);
-        GClass744 gclass = this.gclass744_0;
+        GClass683 gclass = this.gclass744_0;
         if (gclass == null)
         {
             return;
@@ -67,8 +67,8 @@ public class OldIdleState : MovementState
 
     public override void Plant(bool enabled, bool multitool, float plantTime, Action<bool> action)
     {
-        GClass1867 gclass;
-        if ((gclass = (this.MovementContext.PlantState as GClass1867)) != null)
+        GClass1722 gclass;
+        if ((gclass = (this.MovementContext.PlantState as GClass1722)) != null)
         {
             gclass.PlantMultitool = multitool;
             gclass.PlantTime = plantTime;
@@ -158,7 +158,7 @@ public class OldIdleState : MovementState
 
     public void method_0(float deltaTime)
     {
-        GClass744 gclass = this.gclass744_0;
+        GClass683 gclass = this.gclass744_0;
         if (gclass == null)
         {
             return;
@@ -175,5 +175,5 @@ public class OldIdleState : MovementState
     // Token: 0x04005685 RID: 22149
     private const float float_0 = 1E-05f;
 
-    private GClass744 gclass744_0;
+    private GClass683 gclass744_0;
 }

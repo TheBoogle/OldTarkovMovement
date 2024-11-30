@@ -20,10 +20,7 @@ namespace OldTarkovMovement
                 new OldTiltingFix().Enable();
                 new ProceduralBlindfire().Enable();
                 //new BlindfireWhileRunning().Enable();
-                new SendHandsInteractionStateChangedPatch().Enable();
-                new SetInteractInHandsPatch().Enable();
-                new DisableFancyInteractions().Enable();
-                new DropbackpackFix().Enable();
+    
                 //new PreSprintAccelerationFix().Enable();
             }
             catch (Exception ex)
