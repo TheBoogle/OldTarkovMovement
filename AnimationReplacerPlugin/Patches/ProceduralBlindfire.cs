@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace OldTarkovMovement.Patches
 {
-    public class ProdceduralBlindfire : ModulePatch
+    public class ProceduralBlindfire : ModulePatch
     {
         protected override MethodBase GetTargetMethod()
         {

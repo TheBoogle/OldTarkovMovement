@@ -68,6 +68,11 @@ public class OldRunState : MovementState
         }
     }
 
+    public override void Vaulting()
+    {
+        this.MovementContext.TryVaulting();
+    }
+
     // Token: 0x06005B98 RID: 23448 RVA: 0x000D9AEF File Offset: 0x000D7CEF
     protected virtual bool HasNoInputForLongTime()
     {

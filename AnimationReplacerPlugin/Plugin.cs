@@ -18,7 +18,11 @@ namespace OldTarkovMovement
                 new FixForSmoothMotherfuckingSpeed().Enable();
                 new BushSpeedStateRemover().Enable();
                 new OldTiltingFix().Enable();
-                //new ProdceduralBlindfire().Enable();
+                new ProceduralBlindfire().Enable();
+                new SendHandsInteractionStateChangedPatch().Enable();
+                new SetInteractInHandsPatch().Enable();
+                new DisableFancyInteractions().Enable();
+                new DropbackpackFix().Enable();
                 //new PreSprintAccelerationFix().Enable();
             }
             catch (Exception ex)

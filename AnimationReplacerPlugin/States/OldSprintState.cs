@@ -32,6 +32,11 @@ public class OldSprintState : OldRunState
         this.bool_2 = false;
     }
 
+    public override void Vaulting()
+    {
+        this.MovementContext.TryVaulting();
+    }
+
     // Token: 0x06005C17 RID: 23575 RVA: 0x00286F0C File Offset: 0x0028510C
     public override void ManualAnimatorMoveUpdate(float deltaTime)
     {

@@ -35,12 +35,27 @@ public class OldIdleState : MovementState
     {
         base.Enter(isFromSameState);
         this.MovementContext.EnableSprint(false);
+        this.MovementContext.LeftStanceController.SetAnimatorLeftStanceToCacheFromBodyAction(false);
+        GClass744 gclass = this.gclass744_0;
+        if (gclass == null)
+        {
+            return;
+        }
+        gclass.Enter();
     }
 
     // Token: 0x060059F7 RID: 23031 RVA: 0x000D881F File Offset: 0x000D6A1F
     public override void BlindFire(int b)
     {
         this.MovementContext.SetBlindFire(b);
+    }
+    public override void BlendMotion(ref Vector3 motion, float deltaTime)
+    {
+        motion = Vector3.Lerp(motion, this.MovementContext.LastBlendMotionDelta * deltaTime, EFTHardSettings.Instance.IdleStateMotionPreservation);
+    }
+    public override void Vaulting()
+    {
+        this.MovementContext.TryVaulting();
     }
 
     // Token: 0x060059F8 RID: 23032 RVA: 0x000D882D File Offset: 0x000D6A2D
@@ -87,6 +102,10 @@ public class OldIdleState : MovementState
                 }
             }
             this.MovementContext.PlayerAnimatorEnableInert(true);
+        }
+        else
+        {
+            this.MovementContext.MovementDirection = Vector2.zero;
         }
     }
 
@@ -135,6 +154,16 @@ public class OldIdleState : MovementState
             }
         }
         this.MovementContext.Step = step;
+    }
+
+    public void method_0(float deltaTime)
+    {
+        GClass744 gclass = this.gclass744_0;
+        if (gclass == null)
+        {
+            return;
+        }
+        gclass.ProcessAnimatorStep(deltaTime, this.Type);
     }
 
     // Token: 0x04005683 RID: 22147

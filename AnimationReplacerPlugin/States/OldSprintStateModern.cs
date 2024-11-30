@@ -6,7 +6,7 @@ using UnityEngine;
 public class OldSprintStateModern : OldRunState
 {
     public OldSprintStateModern(MovementContext movementContext) : base(movementContext)
-    {}
+    { }
 
     // Token: 0x06005C15 RID: 23573 RVA: 0x00286E60 File Offset: 0x00285060
     public override void Enter(bool isFromSameState)
@@ -30,6 +30,11 @@ public class OldSprintStateModern : OldRunState
         //this.MovementContext.SetPatrol(false);
         this.MovementContext.ResetSpeedAfterSprint();
         this.bool_2 = false;
+    }
+
+    public override void Vaulting()
+    {
+        this.MovementContext.TryVaulting();
     }
 
     // Token: 0x06005C17 RID: 23575 RVA: 0x00286F0C File Offset: 0x0028510C

@@ -30,13 +30,13 @@ namespace OldTarkovMovement
                     case EPlayerState.Run:
                         __result = new OldRunState(__instance);
                         return false;
-                    case EPlayerState.Sprint:
-                        __result = new OldSprintStateModern(__instance);
-                        return false;
-                    // Really need a dynamic way of checking which animations they have chosen so we can choose a different sprint state
                     //case EPlayerState.Sprint:
-                    //    __result = new OldSprintState(__instance);
+                    //    __result = new OldSprintStateModern(__instance);
                     //    return false;
+                    // Really need a dynamic way of checking which animations they have chosen so we can choose a different sprint state
+                    case EPlayerState.Sprint:
+                        __result = new OldSprintState(__instance);
+                        return false;
                     case EPlayerState.Jump:
                         __result = new OldJumpState(__instance);
                         return false;
@@ -47,7 +47,13 @@ namespace OldTarkovMovement
                         __result = new OldSidestepState(__instance);
                         return false;
                     case EPlayerState.BlindFire:
-                        __result = null;
+                        __result = new OldSidestepState(__instance);
+                        return false;
+                    case EPlayerState.Approach:
+                        __result = new OldApproachState(__instance);
+                        return false;
+                    case EPlayerState.Stationary:
+                        __result = new OldStationaryState(__instance);
                         return false;
                 }
          
