@@ -147,10 +147,10 @@ public class OldRunState : MovementState
     }
 
     // Token: 0x06005B9E RID: 23454 RVA: 0x000D881F File Offset: 0x000D6A1F
-    public override void BlindFire(int b)
-    {
-        this.MovementContext.SetBlindFire(b);
-    }
+    //public override void BlindFire(int b)
+    //{
+    //    this.MovementContext.SetBlindFire(b);
+    //}
 
     // Token: 0x06005B9F RID: 23455 RVA: 0x000D9B23 File Offset: 0x000D7D23
     public override void Move(Vector2 direction)

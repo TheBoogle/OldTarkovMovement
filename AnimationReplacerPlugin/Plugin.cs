@@ -6,8 +6,9 @@ using System;
 namespace OldTarkovMovement
 {
     [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.0.1")]
-    public class OldTarkovMovement : BaseUnityPlugin
+    public class Plugin : BaseUnityPlugin
     {
+        public static bool IsForModern = true;
         public void Awake()
         {
             Logger.LogInfo("Loading: Old Tarkov Movement");
@@ -18,8 +19,12 @@ namespace OldTarkovMovement
                 new FixForSmoothMotherfuckingSpeed().Enable();
                 new BushSpeedStateRemover().Enable();
                 new OldTiltingFix().Enable();
-                //new ProceduralBlindfire().Enable();
-                //new BlindfireWhileRunning().Enable();
+                if (!IsForModern)
+                {
+                    new ProceduralBlindfire().Enable();
+                    //new BlindfireWhileRunning().Enable();
+                }
+
                 new RepairObjectivePatch().Enable();
                 new BeaconPlacePatch().Enable();
                 new ExfilInteractPatch().Enable();

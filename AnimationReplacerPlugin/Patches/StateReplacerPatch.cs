@@ -31,13 +31,18 @@ namespace OldTarkovMovement
                         __result = new OldRunState(__instance);
                         return false;
                     case EPlayerState.Sprint:
-                        __result = new OldSprintStateModern(__instance);
+                        if (OldTarkovMovement.Plugin.IsForModern)
+                        {
+                            return true;
+                        }
+
+                        __result = new OldSprintState(__instance);
                         return false;
-                    // Really need a dynamic way of checking which animations they have chosen so we can choose a different sprint state
-                    //case EPlayerState.Sprint:
-                    //    __result = new OldSprintState(__instance);
-                    //    return false;
                     case EPlayerState.Jump:
+                        if (OldTarkovMovement.Plugin.IsForModern)
+                        {
+                            return true;
+                        }
                         __result = new OldJumpState(__instance);
                         return false;
                     case EPlayerState.Transition:
