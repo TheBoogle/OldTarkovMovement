@@ -62,7 +62,7 @@ namespace OldTarkovMovement.Patches
 
                     int AnimationId = 1;
 
-                    switch(interaction)
+                    switch(interaction) // Honestly don't know the actual animation ID's and couldn't find em, just did the ones I 100% did know and guessed others.
                     {
                         case EInteraction.None:
                             return false;
