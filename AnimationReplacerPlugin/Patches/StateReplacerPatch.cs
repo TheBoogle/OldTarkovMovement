@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,6 +23,8 @@ namespace OldTarkovMovement
         {
             try
             {
+                bool IsForModern = false;
+
                 switch (name)
                 {
                     case EPlayerState.Idle:
@@ -37,12 +40,16 @@ namespace OldTarkovMovement
                     case EPlayerState.Run:
                         __result = new OldRunState(__instance);
                         return false;
-                    //case EPlayerState.Sprint:
-                    //    __result = new OldSprintStateModern(__instance);
-                    //    return false;
-                    // Really need a dynamic way of checking which animations they have chosen so we can choose a different sprint state
                     case EPlayerState.Sprint:
-                        __result = new OldSprintState(__instance);
+                        if (IsForModern)
+                        {
+                            __result = new OldSprintStateModern(__instance);
+                        }
+                        else
+                        {
+                            __result = new OldSprintState(__instance);
+                        }
+                        
                         return false;
                     case EPlayerState.Jump:
                         __result = new OldJumpState(__instance);

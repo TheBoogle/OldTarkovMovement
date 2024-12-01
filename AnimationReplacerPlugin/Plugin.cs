@@ -8,6 +8,7 @@ namespace OldTarkovMovement
     [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.0.1")]
     public class OldTarkovMovement : BaseUnityPlugin
     {
+        bool IsForModern = false;
         public void Awake()
         {
             Logger.LogInfo("Loading: Old Tarkov Movement");
@@ -18,12 +19,18 @@ namespace OldTarkovMovement
                 new FixForSmoothMotherfuckingSpeed().Enable();
                 new BushSpeedStateRemover().Enable();
                 new OldTiltingFix().Enable();
-                new ProceduralBlindfire().Enable();
+
+                if (!IsForModern)
+                {
+                    new ProceduralBlindfire().Enable();
+                    new SendHandsInteractionStateChangedPatch().Enable();
+                    new SetInteractInHandsPatch().Enable();
+                    new DisableFancyInteractions().Enable();
+                    new DropbackpackFix().Enable();
+                }
+                
                 //new BlindfireWhileRunning().Enable();
-                new SendHandsInteractionStateChangedPatch().Enable();
-                new SetInteractInHandsPatch().Enable();
-                new DisableFancyInteractions().Enable();
-                new DropbackpackFix().Enable();
+                
                 new TripwireInteractionPatch().Enable();
                 new RepairObjectivePatch().Enable();
                 new BeaconPlacePatch().Enable();
