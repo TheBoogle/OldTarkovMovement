@@ -12,6 +12,7 @@ namespace OldTarkovMovement
 {
     public class StateReplacer : ModulePatch
     {
+        public static bool IsForModern = OldTarkovMovement.Plugin.IsForModern;
         protected override MethodBase GetTargetMethod()
         {
             // Replace with the target method's type and name
@@ -23,8 +24,6 @@ namespace OldTarkovMovement
         {
             try
             {
-                bool IsForModern = false;
-
                 switch (name)
                 {
                     case EPlayerState.Idle:
@@ -43,15 +42,18 @@ namespace OldTarkovMovement
                     case EPlayerState.Sprint:
                         if (IsForModern)
                         {
-                            __result = new OldSprintStateModern(__instance);
+                            return true;
                         }
-                        else
-                        {
-                            __result = new OldSprintState(__instance);
-                        }
-                        
+
+                        __result = new OldSprintState(__instance);
+
                         return false;
                     case EPlayerState.Jump:
+                        if (IsForModern)
+                        {
+                            return true;
+                        }
+
                         __result = new OldJumpState(__instance);
                         return false;
                     case EPlayerState.Transition:
@@ -60,9 +62,9 @@ namespace OldTarkovMovement
                     case EPlayerState.Sidestep:
                         __result = new OldSidestepState(__instance);
                         return false;
-                    case EPlayerState.BlindFire:
-                        __result = new OldSidestepState(__instance);
-                        return false;
+                    //case EPlayerState.BlindFire:
+                    //    __result = new OldSidestepState(__instance);
+                    //    return false;
                     case EPlayerState.Approach:
                         __result = new OldApproachState(__instance);
                         return false;

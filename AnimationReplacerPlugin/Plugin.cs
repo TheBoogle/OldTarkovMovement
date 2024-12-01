@@ -5,13 +5,20 @@ using System;
 
 namespace OldTarkovMovement
 {
-    [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.0.1")]
-    public class OldTarkovMovement : BaseUnityPlugin
+    [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.0.3")]
+    public class Plugin : BaseUnityPlugin
     {
-        bool IsForModern = false;
+        public static bool IsForModern = false;
         public void Awake()
         {
-            Logger.LogInfo("Loading: Old Tarkov Movement");
+            if (IsForModern)
+            {
+                Logger.LogInfo("Using Modern Variant");
+            }
+            else
+            {
+                Logger.LogInfo("Using Old Variant");
+            }
 
             try
             {
@@ -28,9 +35,9 @@ namespace OldTarkovMovement
                     new DisableFancyInteractions().Enable();
                     new DropbackpackFix().Enable();
                 }
-                
+
                 //new BlindfireWhileRunning().Enable();
-                
+
                 new TripwireInteractionPatch().Enable();
                 new RepairObjectivePatch().Enable();
                 new BeaconPlacePatch().Enable();

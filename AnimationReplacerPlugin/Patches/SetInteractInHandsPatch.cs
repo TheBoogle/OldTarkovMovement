@@ -25,7 +25,7 @@ namespace OldTarkovMovement.Patches
         [PatchPrefix]
         private static bool Prefix(MovementContext __instance, EInteraction interaction)
         {
-            
+
             try
             {
                 var playerField = typeof(MovementContext).GetField("_player", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -33,8 +33,6 @@ namespace OldTarkovMovement.Patches
                 if (playerField != null)
                 {
                     Player player = playerField.GetValue(__instance) as Player;
-
-                    Logger.LogInfo("Hello World!");
 
                     if (__instance.IsInMountedState)
                     {
@@ -53,16 +51,9 @@ namespace OldTarkovMovement.Patches
                         return false;
                     }
 
-                    player.HandsAnimator.Animator.SetLayerWeight(4, 1);
-
-                    if (interaction != EInteraction.None)
-                    {
-                        WeaponAnimationSpeedControllerClass.SetUseLeftHand(player.HandsAnimator.Animator, true);
-                    }
-
                     int AnimationId = 1;
 
-                    switch(interaction) // Honestly don't know the actual animation ID's and couldn't find em, just did the ones I 100% did know and guessed others.
+                    switch (interaction) // Honestly don't know the actual animation ID's and couldn't find em, just did the ones I 100% did know and guessed others.
                     {
                         case EInteraction.None:
                             return false;
@@ -88,12 +79,18 @@ namespace OldTarkovMovement.Patches
                             break;
                     }
 
+                    if (interaction != EInteraction.None)
+                    {
+                        player.HandsAnimator.Animator.SetLayerWeight(4, 1);
+
+                        WeaponAnimationSpeedControllerClass.SetUseLeftHand(player.HandsAnimator.Animator, true);
+                    }
+
                     WeaponAnimationSpeedControllerClass.SetLActionIndex(player.HandsAnimator.Animator, AnimationId);
 
-                    Logger.LogInfo($"smooch smoochs {AnimationId}");
                     return false;
                 }
-                
+
                 return true;
             }
             catch (Exception ex)
