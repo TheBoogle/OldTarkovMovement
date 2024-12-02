@@ -8,7 +8,7 @@ namespace OldTarkovMovement
     [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.0.3")]
     public class Plugin : BaseUnityPlugin
     {
-        public static bool IsForModern = false;
+        public static bool IsForModern = true;
         public void Awake()
         {
             if (IsForModern)
