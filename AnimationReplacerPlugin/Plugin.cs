@@ -8,7 +8,7 @@ namespace OldTarkovMovement
     [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.0.3")]
     public class Plugin : BaseUnityPlugin
     {
-        public static bool IsForModern = true;
+        public static bool IsForModern = false;
         public void Awake()
         {
             if (IsForModern)
@@ -34,21 +34,22 @@ namespace OldTarkovMovement
                     new SetInteractInHandsPatch().Enable();
                     new DisableFancyInteractions().Enable();
                     new DropbackpackFix().Enable();
+                }
 
-                    if (!IsForModern)
+                if (!IsForModern) // Fika patch
+                {
+                    try
                     {
-                        try
-                        {
-                            new FikaStatePatch().Enable();
-                        }
-                        catch (Exception e)
-                        {
-                            Logger.LogInfo("Safe to assume the user doesn't have Fika");
-                        }
-                    } else
-                    {
-                        Logger.LogInfo("Skipping Fika patch because they are on modern variant.");
+                        new FikaStatePatch().Enable();
                     }
+                    catch (Exception e)
+                    {
+                        Logger.LogInfo("Safe to assume the user doesn't have Fika");
+                    }
+                }
+                else
+                {
+                    Logger.LogInfo("Skipping Fika patch because they are on modern variant.");
                 }
 
                 //new BlindfireWhileRunning().Enable();
