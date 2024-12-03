@@ -88,3 +88,4 @@ C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\obj\De
 C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\obj\Debug\OldTarko.DC296AAD.Up2Date
 C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\obj\Debug\OldTarkovMovement.dll
 C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\obj\Debug\OldTarkovMovement.pdb
+C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\bin\Debug\Fika.Core.dll

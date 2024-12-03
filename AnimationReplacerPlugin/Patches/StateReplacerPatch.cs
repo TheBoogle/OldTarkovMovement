@@ -44,18 +44,18 @@ namespace OldTarkovMovement
                         {
                             return true;
                         }
-
+                        
                         __result = new OldSprintState(__instance);
 
                         return false;
-                    //case EPlayerState.Jump:
-                    //    if (IsForModern)
-                    //    {
-                    //        return true;
-                    //    }
+                    case EPlayerState.Jump:
+                        if (IsForModern)
+                        {
+                            return true;
+                        }
 
-                    //    __result = new OldJumpState(__instance);
-                    //    return false;
+                        __result = new OldJumpState(__instance);
+                        return false;
                     case EPlayerState.Transition:
                         __result = new OldTransitionState(__instance);
                         return false;

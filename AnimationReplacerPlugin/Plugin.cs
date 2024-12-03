@@ -34,6 +34,21 @@ namespace OldTarkovMovement
                     new SetInteractInHandsPatch().Enable();
                     new DisableFancyInteractions().Enable();
                     new DropbackpackFix().Enable();
+
+                    if (!IsForModern)
+                    {
+                        try
+                        {
+                            new FikaStatePatch().Enable();
+                        }
+                        catch (Exception e)
+                        {
+                            Logger.LogInfo("Safe to assume the user doesn't have Fika");
+                        }
+                    } else
+                    {
+                        Logger.LogInfo("Skipping Fika patch because they are on modern variant.");
+                    }
                 }
 
                 //new BlindfireWhileRunning().Enable();
