@@ -84,7 +84,6 @@
     <Compile Include="Patches\OldTiltingFix.cs" />
     <Compile Include="Patches\PreSprintAccelerationFix.cs" />
     <Compile Include="Patches\FixForSmoothMotherfuckingSpeed.cs" />
-    <Compile Include="FikaStates\FikaSprintState.cs" />
     <Compile Include="States\OldApproachState.cs" />
     <Compile Include="States\OldIdleState.cs" />
     <Compile Include="States\OldJumpState.cs" />

@@ -62,15 +62,16 @@ namespace OldTarkovMovement
 
         private async void DelayFikaLoad()
         {
-            await Task.Delay(2 * 1000);
+            await Task.Delay(5 * 1000);
             
-            bool FikaLoaded = Chainloader.PluginInfos.ContainsKey("fika.core");
+            bool FikaLoaded = Chainloader.PluginInfos.ContainsKey("com.fika.core");
 
-            Logger.LogInfo($"Fika Loaded: {FikaLoaded}")
+            Logger.LogInfo($"Fika Loaded: {FikaLoaded}");
 
             if (FikaLoaded) // Fika patch
             {
-                new Fika_OldTarkovMovement.FikaStatePatch().Enable();
+                new FikaStateEnterPatch().Enable();
+                new FikaStateExitPatch().Enable();
             }
             else
             {

@@ -4,35 +4,58 @@ using SPT.Reflection.Patching;
 using System;
 using System.Reflection;
 
-namespace Fika_OldTarkovMovement
+namespace OldTarkovMovement
 {
-    public class FikaStatePatch : ModulePatch
+    public class FikaStateEnterPatch : ModulePatch
     {
         protected override MethodBase GetTargetMethod()
         {
             // Replace with the target method's type and name
-            return typeof(ObservedMovementContext).GetMethod("GetNewState", BindingFlags.Public | BindingFlags.Instance);
+            return typeof(SprintState).GetMethod("Enter", BindingFlags.Public | BindingFlags.Instance);
         }
 
-        [PatchPrefix]
-        private static bool Prefix(ObservedMovementContext __instance, ref BaseMovementState __result, EPlayerState name, bool isAI = false)
+        [PatchPostfix]
+        private static void Prefix(SprintState __instance)
         {
             try
             {
-                switch (name)
-                {
-                    case EPlayerState.Sprint:
-                        __result = new FikaSprintState(__instance);
+                var MovementContextField = typeof(SprintState).GetField("MovementContext", BindingFlags.NonPublic | BindingFlags.Instance);
+                MovementContext MovementContext = (MovementContext)MovementContextField.GetValue(__instance);
 
-                        return false;
-                }
-
-                return true;
+                MovementContext.SetPatrol(true);
+                return;
             }
             catch (Exception ex)
             {
                 Logger.LogError($"GenericPatch Prefix failed: {ex}");
-                return true;
+                return;
+            }
+        }
+    }
+
+    public class FikaStateExitPatch : ModulePatch
+    {
+        protected override MethodBase GetTargetMethod()
+        {
+            // Replace with the target method's type and name
+            return typeof(SprintState).GetMethod("Exit", BindingFlags.Public | BindingFlags.Instance);
+        }
+
+        [PatchPostfix]
+        private static void Prefix(SprintState __instance)
+        {
+            try
+            {
+                var MovementContextField = typeof(SprintState).GetField("MovementContext", BindingFlags.NonPublic | BindingFlags.Instance);
+                MovementContext MovementContext = (MovementContext)MovementContextField.GetValue(__instance);
+
+                MovementContext.SetPatrol(false);
+                return;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"GenericPatch Prefix failed: {ex}");
+                return;
             }
         }
     }
