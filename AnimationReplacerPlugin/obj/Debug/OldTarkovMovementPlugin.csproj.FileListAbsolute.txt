@@ -15,7 +15,6 @@ C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\bin\De
 C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\bin\Debug\Sirenix.OdinInspector.Attributes.dll
 C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\bin\Debug\UnityEngine.Physics2DModule.dll
 C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\bin\Debug\UnityEngine.AIModule.dll
-C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\bin\Debug\Comfort.dll
 C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\bin\Debug\bsg.microsoft.extensions.objectpool.dll
 C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\bin\Debug\UnityEngine.UnityWebRequestModule.dll
 C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\bin\Debug\websocket-sharp.dll

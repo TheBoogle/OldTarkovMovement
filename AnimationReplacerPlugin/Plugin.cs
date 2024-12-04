@@ -2,13 +2,17 @@
 using OldTarkovMovement.Patches;
 using BepInEx;
 using System;
+using BepInEx.Bootstrap;
+using EFT;
+using System.Threading.Tasks;
 
 namespace OldTarkovMovement
 {
-    [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.0.3")]
+    [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.0.5")]
     public class Plugin : BaseUnityPlugin
     {
         public static bool IsForModern = false;
+        
         public void Awake()
         {
             if (IsForModern)
@@ -34,22 +38,8 @@ namespace OldTarkovMovement
                     new SetInteractInHandsPatch().Enable();
                     new DisableFancyInteractions().Enable();
                     new DropbackpackFix().Enable();
-                }
 
-                if (!IsForModern) // Fika patch
-                {
-                    try
-                    {
-                        new FikaStatePatch().Enable();
-                    }
-                    catch (Exception e)
-                    {
-                        Logger.LogInfo("Safe to assume the user doesn't have Fika");
-                    }
-                }
-                else
-                {
-                    Logger.LogInfo("Skipping Fika patch because they are on modern variant.");
+                    DelayFikaLoad();
                 }
 
                 //new BlindfireWhileRunning().Enable();
@@ -68,6 +58,24 @@ namespace OldTarkovMovement
             }
 
             Logger.LogInfo("Completed: Old Tarkov Movement");
+        }
+
+        private async void DelayFikaLoad()
+        {
+            await Task.Delay(2 * 1000);
+            
+            bool FikaLoaded = Chainloader.PluginInfos.ContainsKey("fika.core");
+
+            Logger.LogInfo($"Fika Loaded: {FikaLoaded}")
+
+            if (FikaLoaded) // Fika patch
+            {
+                new Fika_OldTarkovMovement.FikaStatePatch().Enable();
+            }
+            else
+            {
+                Logger.LogInfo("Skipping Fika patch because Fika is not loaded.");
+            }
         }
     }
 }

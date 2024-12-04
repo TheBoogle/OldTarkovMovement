@@ -2,18 +2,12 @@
 using Fika.Core.Coop.ObservedClasses;
 using SPT.Reflection.Patching;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace OldTarkovMovement
+namespace Fika_OldTarkovMovement
 {
     public class FikaStatePatch : ModulePatch
     {
-        public static bool IsForModern = OldTarkovMovement.Plugin.IsForModern;
         protected override MethodBase GetTargetMethod()
         {
             // Replace with the target method's type and name
@@ -23,11 +17,6 @@ namespace OldTarkovMovement
         [PatchPrefix]
         private static bool Prefix(ObservedMovementContext __instance, ref BaseMovementState __result, EPlayerState name, bool isAI = false)
         {
-            if (OldTarkovMovement.Plugin.IsForModern)
-            {
-                return true;
-            }
-
             try
             {
                 switch (name)
