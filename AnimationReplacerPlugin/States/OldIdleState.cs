@@ -4,7 +4,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 
 // Token: 0x02000ECF RID: 3791
-public class OldIdleState : MovementState
+public class OldIdleState : IdleState
 {
     public OldIdleState(MovementContext movementContext) : base(movementContext)
     {

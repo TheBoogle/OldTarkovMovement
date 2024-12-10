@@ -3,7 +3,7 @@ using EFT;
 using UnityEngine;
 
 // Token: 0x02000EDC RID: 3804
-public class OldRunState : MovementState
+public class OldRunState : RunState
 {
     // Token: 0x06005B94 RID: 23444 RVA: 0x000D9AC6 File Offset: 0x000D7CC6
     public OldRunState(MovementContext movementContext) : base(movementContext)

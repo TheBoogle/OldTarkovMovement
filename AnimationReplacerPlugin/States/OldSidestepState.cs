@@ -3,7 +3,7 @@ using EFT;
 using UnityEngine;
 
 // Token: 0x0200050F RID: 1295
-public class OldSidestepState : OldIdleState
+public class OldSidestepState : SideStepState
 {
     public OldSidestepState(MovementContext movementContext) : base(movementContext)
     { }

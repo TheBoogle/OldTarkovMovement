@@ -3,7 +3,7 @@ using EFT;
 using UnityEngine;
 
 // Token: 0x02000ED0 RID: 3792
-public class OldJumpState : MovementState
+public class OldJumpState : JumpState
 {
     // Token: 0x06005A02 RID: 23042 RVA: 0x000D8889 File Offset: 0x000D6A89
     public OldJumpState(MovementContext movementContext) : base(movementContext)

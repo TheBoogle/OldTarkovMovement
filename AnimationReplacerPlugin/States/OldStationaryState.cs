@@ -6,7 +6,7 @@ using UnityEngine;
 using static RootMotion.BipedReferences;
 
 // Token: 0x02000EEB RID: 3819
-public class OldStationaryState : OldIdleState
+public class OldStationaryState : StationaryState
 {
 
     public OldStationaryState(MovementContext movementContext) : base(movementContext)

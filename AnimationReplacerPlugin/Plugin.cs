@@ -11,7 +11,7 @@ namespace OldTarkovMovement
     [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.0.5")]
     public class Plugin : BaseUnityPlugin
     {
-        public static bool IsForModern = false;
+        public static bool IsForModern = true;
         
         public void Awake()
         {
@@ -44,10 +44,10 @@ namespace OldTarkovMovement
 
                 //new BlindfireWhileRunning().Enable();
 
-                new TripwireInteractionPatch().Enable();
-                new RepairObjectivePatch().Enable();
-                new BeaconPlacePatch().Enable();
-                new ExfilInteractPatch().Enable();
+                //new TripwireInteractionPatch().Enable();
+                //new RepairObjectivePatch().Enable();
+                //new BeaconPlacePatch().Enable();
+                //new ExfilInteractPatch().Enable();
                 //new PreSprintAccelerationFix().Enable();
             }
             catch (Exception ex)

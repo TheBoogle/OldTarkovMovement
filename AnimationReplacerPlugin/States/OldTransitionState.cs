@@ -3,7 +3,7 @@ using EFT;
 using UnityEngine;
 
 // Token: 0x02000EEA RID: 3818
-public class OldTransitionState: MovementState
+public class OldTransitionState: TransitionState
 {
     public OldTransitionState(MovementContext movementContext) : base(movementContext)
     { }
