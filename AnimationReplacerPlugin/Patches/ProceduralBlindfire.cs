@@ -92,6 +92,30 @@ namespace OldTarkovMovement.Patches
         }
     }
 
+    public class DisableAnimatedBlindfirePatch : ModulePatch
+    {
+        protected override MethodBase GetTargetMethod()
+        {
+            // Replace with the target method's type and name
+            return typeof(MovementContext).GetMethod("PlayerAnimatorSetBlindFire",
+                BindingFlags.Public | BindingFlags.Instance);
+        }
+
+        [PatchPrefix]
+        private static bool Prefix(MovementContext __instance)
+        {
+            try
+            {
+                return false; // Skip the original method
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"SetBlindfireFix Prefix failed: {ex}");
+                return true; // Continue to the original method in case of error
+            }
+        }
+    }
+
     public class BlindfireWhileRunning : ModulePatch
     {
         protected override MethodBase GetTargetMethod()

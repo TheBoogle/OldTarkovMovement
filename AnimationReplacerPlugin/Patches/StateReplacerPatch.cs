@@ -12,7 +12,7 @@ namespace OldTarkovMovement
 {
     public class StateReplacer : ModulePatch
     {
-        public static bool IsForModern = OldTarkovMovement.Plugin.IsForModern;
+        public static bool IsForModern = !OldTarkovMovement.Plugin.ModConfig.NostalgiaMode;
 
         protected override MethodBase GetTargetMethod()
         {
@@ -23,7 +23,7 @@ namespace OldTarkovMovement
         [PatchPrefix]
         private static bool Prefix(MovementContext __instance, ref BaseMovementState __result, EPlayerState name, bool isAI = false)
         {
-            if (isAI && !Plugin.ApplyToAI)
+            if (isAI && !Plugin.ModConfig.BotsUseOldMovement)
             {
                 return true;
             }

@@ -118,3 +118,4 @@ C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\bin\De
 C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\bin\Debug\MonoMod.Utils.xml
 C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\bin\Debug\0Harmony.xml
 C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\bin\Debug\MonoMod.RuntimeDetour.xml
+C:\Users\thebo\Documents\Github\OldTarkovMovement\AnimationReplacerPlugin\bin\Debug\Newtonsoft.Json.xml

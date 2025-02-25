@@ -51,6 +51,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>W:\SPTDevelopment\BepInEx\plugins\Fika.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="spt-common">
       <HintPath>W:\SPTDevelopment\BepInEx\plugins\spt\spt-common.dll</HintPath>
     </Reference>
@@ -84,12 +87,11 @@
     <Compile Include="Patches\DisableFancyInteractions.cs" />
     <Compile Include="Patches\DropbackpackFix.cs" />
     <Compile Include="FikaPatches\FikaStatePatch.cs" />
-    <Compile Include="Patches\PlantItemPatch.cs" />
+    <Compile Include="Patches\AimingSlowdownPatch.cs" />
     <Compile Include="Patches\SetInteractInHandsPatch.cs" />
     <Compile Include="Patches\SendHandsInteractionStateChangedPatch.cs" />
     <Compile Include="Patches\ProceduralBlindfire.cs" />
     <Compile Include="Patches\OldTiltingFix.cs" />
-    <Compile Include="Patches\PreSprintAccelerationFix.cs" />
     <Compile Include="Patches\FixForSmoothMotherfuckingSpeed.cs" />
     <Compile Include="States\OldApproachState.cs" />
     <Compile Include="States\OldIdleState.cs" />
@@ -107,6 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,17 +5,39 @@ using System;
 using BepInEx.Bootstrap;
 using EFT;
 using System.Threading.Tasks;
+using SPT.Common.Http;
+using Newtonsoft.Json;
 
 namespace OldTarkovMovement
 {
+    public interface IFuckingConfig {
+    }
+
+    public class OldTarkovMovementConfig : IFuckingConfig
+    {
+        public bool NostalgiaMode { get; set; }
+        public bool DoesAimingSlowYouDown { get; set; }
+        public bool QuickTilting { get; set; }
+        public bool BotsUseOldMovement { get; set; }
+        public bool DoBushesSlowYouDown { get; set; }
+    }
+
     [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.0.6")]
     public class Plugin : BaseUnityPlugin
     {
-        public static bool IsForModern = false;
-        
+        public static OldTarkovMovementConfig ModConfig;
+
+        private static T UpdateInfoFromServer<T>(string route) where T : class, IFuckingConfig
+        {
+            var json = RequestHandler.GetJson(route);
+
+            return JsonConvert.DeserializeObject<T>(json);
+        }
+
         public void Awake()
         {
-            if (IsForModern)
+            ModConfig = UpdateInfoFromServer<OldTarkovMovementConfig>("/OldTarkovMovement/GetConfig");
+            if (!ModConfig.NostalgiaMode)
             {
                 Logger.LogInfo("Using Modern Variant");
             }
@@ -29,26 +51,29 @@ namespace OldTarkovMovement
                 new StateReplacer().Enable();
                 new FixForSmoothMotherfuckingSpeed().Enable();
                 new BushSpeedStateRemover().Enable();
-                new OldTiltingFix().Enable();
-
-                if (!IsForModern)
+                
+                if (ModConfig.QuickTilting)
                 {
+                    new OldTiltingFix().Enable();
+                }
+
+                new AimingSlowdownPatch().Enable();
+
+                
+
+                if (ModConfig.NostalgiaMode)
+                {
+                    //new DisableAnimatedBlindfirePatch().Enable();
                     new ProceduralBlindfire().Enable();
                     new SendHandsInteractionStateChangedPatch().Enable();
                     new SetInteractInHandsPatch().Enable();
                     new DisableFancyInteractions().Enable();
                     new DropbackpackFix().Enable();
 
+                    //new BlindfireWhileRunning().Enable();
+
                     DelayFikaLoad();
                 }
-
-                //new BlindfireWhileRunning().Enable();
-
-                //new TripwireInteractionPatch().Enable();
-                //new RepairObjectivePatch().Enable();
-                //new BeaconPlacePatch().Enable();
-                //new ExfilInteractPatch().Enable();
-                //new PreSprintAccelerationFix().Enable();
             }
             catch (Exception ex)
             {
