@@ -13,6 +13,7 @@ namespace OldTarkovMovement
     public class StateReplacer : ModulePatch
     {
         public static bool IsForModern = OldTarkovMovement.Plugin.IsForModern;
+
         protected override MethodBase GetTargetMethod()
         {
             // Replace with the target method's type and name
@@ -22,6 +23,11 @@ namespace OldTarkovMovement
         [PatchPrefix]
         private static bool Prefix(MovementContext __instance, ref BaseMovementState __result, EPlayerState name, bool isAI = false)
         {
+            if (isAI && !Plugin.ApplyToAI)
+            {
+                return true;
+            }
+
             try
             {
                 switch (name)

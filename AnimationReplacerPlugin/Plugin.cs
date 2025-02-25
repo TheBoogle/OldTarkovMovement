@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace OldTarkovMovement
 {
-    [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.0.5")]
+    [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.0.6")]
     public class Plugin : BaseUnityPlugin
     {
-        public static bool IsForModern = true;
+        public static bool IsForModern = false;
         
         public void Awake()
         {
