@@ -50,7 +50,11 @@ namespace OldTarkovMovement
             {
                 new StateReplacer().Enable();
                 new FixForSmoothMotherfuckingSpeed().Enable();
-                new BushSpeedStateRemover().Enable();
+                
+                if (!ModConfig.DoBushesSlowYouDown)
+                {
+                    new BushSpeedStateRemover().Enable();
+                }
                 
                 if (ModConfig.QuickTilting)
                 {
