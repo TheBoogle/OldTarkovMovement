@@ -95,8 +95,6 @@ namespace OldTarkovMovement
             
             bool FikaLoaded = Chainloader.PluginInfos.ContainsKey("com.fika.core");
 
-            Logger.LogInfo($"Fika Loaded: {FikaLoaded}");
-
             if (FikaLoaded) // Fika patch
             {
                 new FikaStateEnterPatch().Enable();

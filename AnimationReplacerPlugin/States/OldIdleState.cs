@@ -4,14 +4,14 @@ using JetBrains.Annotations;
 using UnityEngine;
 
 // Token: 0x02000ECF RID: 3791
-public class OldIdleState : IdleState
+public class OldIdleState : IdleStateClass
 {
     public OldIdleState(MovementContext movementContext) : base(movementContext)
     {
         if (!this.MovementContext.IsAI)
         {
-            this.gclass744_0 = new GClass744();
-            this.gclass744_0.Init(movementContext);
+            this.gclass755_0 = new GClass755();
+            this.gclass755_0.Init(movementContext);
         }
     }
 
@@ -36,7 +36,7 @@ public class OldIdleState : IdleState
         base.Enter(isFromSameState);
         this.MovementContext.EnableSprint(false);
         this.MovementContext.LeftStanceController.SetAnimatorLeftStanceToCacheFromBodyAction(false);
-        GClass744 gclass = this.gclass744_0;
+        GClass755 gclass = this.gclass755_0;
         if (gclass == null)
         {
             return;
@@ -67,8 +67,8 @@ public class OldIdleState : IdleState
 
     public override void Plant(bool enabled, bool multitool, float plantTime, Action<bool> action)
     {
-        GClass1867 gclass;
-        if ((gclass = (this.MovementContext.PlantState as GClass1867)) != null)
+        PlantStateClass gclass;
+        if ((gclass = (this.MovementContext.PlantState as PlantStateClass)) != null)
         {
             gclass.PlantMultitool = multitool;
             gclass.PlantTime = plantTime;
@@ -158,7 +158,7 @@ public class OldIdleState : IdleState
 
     public void method_0(float deltaTime)
     {
-        GClass744 gclass = this.gclass744_0;
+        GClass755 gclass = this.gclass755_0;
         if (gclass == null)
         {
             return;

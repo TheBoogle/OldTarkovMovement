@@ -62,21 +62,9 @@ namespace OldTarkovMovement
 
                         __result = new OldJumpState(__instance);
                         return false;
-                    //case EPlayerState.Transition:
-                    //    __result = new OldTransitionState(__instance);
-                    //    return false;
                     case EPlayerState.Sidestep:
                         __result = new OldSidestepState(__instance);
                         return false;
-                    //case EPlayerState.BlindFire:
-                    //    __result = new OldSidestepState(__instance);
-                    //    return false;
-                    //case EPlayerState.Approach:
-                    //    __result = new OldApproachState(__instance);
-                    //    return false;
-                    //case EPlayerState.Stationary:
-                    //    __result = new OldStationaryState(__instance);
-                    //    return false;
                 }
          
                 return true;

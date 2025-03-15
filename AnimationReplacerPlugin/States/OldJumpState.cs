@@ -3,7 +3,7 @@ using EFT;
 using UnityEngine;
 
 // Token: 0x02000ED0 RID: 3792
-public class OldJumpState : JumpState
+public class OldJumpState : JumpStateClass
 {
     // Token: 0x06005A02 RID: 23042 RVA: 0x000D8889 File Offset: 0x000D6A89
     public OldJumpState(MovementContext movementContext) : base(movementContext)
@@ -22,7 +22,7 @@ public class OldJumpState : JumpState
         this.float_2 = 0f;
         this.int_0 = 0;
         this.bool_0 = (this.MovementContext.PreviousState is OldSprintState);
-        this.ejumpState_0 = JumpState.EJumpState.PushingFromTheGround;
+        this.ejumpState_0 = JumpStateClass.EJumpState.PushingFromTheGround;
         Vector3 inputMotionBeforeLimit = this.MovementContext.InputMotionBeforeLimit;
         Vector3 vector = (this.MovementContext.PreviousState is OldRunState) ? (this.MovementContext.AbsoluteMovementDirection.normalized / 3f) : Vector3.zero;
         inputMotionBeforeLimit = new Vector3((Mathf.Abs(inputMotionBeforeLimit.x) > Mathf.Abs(vector.x)) ? inputMotionBeforeLimit.x : vector.x, 0f, (Mathf.Abs(inputMotionBeforeLimit.z) > Mathf.Abs(vector.z)) ? inputMotionBeforeLimit.z : vector.z);
@@ -55,13 +55,13 @@ public class OldJumpState : JumpState
     public override void ManualAnimatorMoveUpdate(float deltaTime)
     {
         this.MovementContext.PlayerAnimatorEnableInert(this.vector2_0.magnitude > 0.1f);
-        if (this.ejumpState_0 == JumpState.EJumpState.PushingFromTheGround)
+        if (this.ejumpState_0 == JumpStateClass.EJumpState.PushingFromTheGround)
         {
             if (!this.MovementContext.HeadBump(this.vector3_2.y * deltaTime) && this.float_2 <= 2f + this.float_3)
             {
                 if (!this.MovementContext.IsGrounded && this.float_2 > this.float_3)
                 {
-                    this.ejumpState_0 = JumpState.EJumpState.Jump;
+                    this.ejumpState_0 = JumpStateClass.EJumpState.Jump;
                 }
             }
             else
@@ -69,7 +69,7 @@ public class OldJumpState : JumpState
                 this.method_0();
             }
         }
-        else if (this.ejumpState_0 == JumpState.EJumpState.Jump)
+        else if (this.ejumpState_0 == JumpStateClass.EJumpState.Jump)
         {
             if (this.float_9 > EFTHardSettings.Instance.JumpTimeDescendingForStateExit && this.MovementContext.IsGrounded)
             {
@@ -128,7 +128,7 @@ public class OldJumpState : JumpState
     {
         this.MovementContext.PlayerAnimatorEnableJump(false);
         this.MovementContext.PlayerAnimatorEnableLanding(true);
-        this.ejumpState_0 = JumpState.EJumpState.Bumbped;
+        this.ejumpState_0 = JumpStateClass.EJumpState.Bumbped;
     }
 
     // Token: 0x06005A07 RID: 23047 RVA: 0x00281450 File Offset: 0x0027F650
@@ -172,7 +172,7 @@ public class OldJumpState : JumpState
         }
         this.float_0 = Mathf.Lerp(this.float_0, b, deltaTime * EFTHardSettings.Instance.AIR_LERP);
         Vector3 vector = (this.vector3_0 * this.float_0 + this.vector3_2) * deltaTime;
-        if (this.ejumpState_0 == JumpState.EJumpState.Bumbped)
+        if (this.ejumpState_0 == JumpStateClass.EJumpState.Bumbped)
         {
             vector.y = Mathf.Min(vector.y, 0f);
         }
@@ -222,7 +222,7 @@ public class OldJumpState : JumpState
     private float float_3;
 
     // Token: 0x0400568E RID: 22158
-    protected JumpState.EJumpState ejumpState_0;
+    protected JumpStateClass.EJumpState ejumpState_0;
 
     // Token: 0x0400568F RID: 22159
     private float float_4;

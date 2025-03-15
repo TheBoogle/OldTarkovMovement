@@ -3,7 +3,7 @@ using EFT;
 using UnityEngine;
 
 // Token: 0x0200050F RID: 1295
-public class OldSidestepState : SideStepState
+public class OldSidestepState : SideStepStateClass
 {
     public OldSidestepState(MovementContext movementContext) : base(movementContext)
     { }
@@ -15,7 +15,7 @@ public class OldSidestepState : SideStepState
         {
             float num = this.MovementContext.Yaw - this.MovementContext.HandsToBodyAngle;
             Vector2 yawLimit = new Vector2(num - this.MovementContext.TrunkRotationLimit + 1f, num + this.MovementContext.TrunkRotationLimit - 1f);
-            this.MovementContext.SetRotationLimit(yawLimit, Player.GClass1738.STAND_POSE_ROTATION_PITCH_RANGE);
+            this.MovementContext.SetRotationLimit(yawLimit, Player.GClass1772.STAND_POSE_ROTATION_PITCH_RANGE);
         }
         this.MovementContext.SetTilt(0f, false);
     }
@@ -25,7 +25,7 @@ public class OldSidestepState : SideStepState
     {
         if (!toSameState)
         {
-            this.MovementContext.SetRotationLimit(Player.GClass1738.FULL_YAW_RANGE, Player.GClass1738.STAND_POSE_ROTATION_PITCH_RANGE);
+            this.MovementContext.SetRotationLimit(Player.GClass1772.FULL_YAW_RANGE, Player.GClass1772.STAND_POSE_ROTATION_PITCH_RANGE);
             this.SetStep(0);
         }
         base.Exit(toSameState);
