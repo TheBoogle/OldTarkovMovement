@@ -20,6 +20,7 @@ namespace OldTarkovMovement
         public bool QuickTilting { get; set; }
         public bool BotsUseOldMovement { get; set; }
         public bool DoBushesSlowYouDown { get; set; }
+        public bool RemoveJitteryRotation { get; set; }
     }
 
     [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.0.6")]
@@ -59,6 +60,12 @@ namespace OldTarkovMovement
                 if (ModConfig.QuickTilting)
                 {
                     new OldTiltingFix().Enable();
+                }
+                
+                if (ModConfig.RemoveJitteryRotation)
+                {
+                    new RemoveJitteryRotationPatch().Enable();
+                    new RemoveStupidMotionSicknessBSGMade().Enable();
                 }
 
                 new AimingSlowdownPatch().Enable();

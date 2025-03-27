@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Patches\BushSpeedStateRemover.cs" />
+    <Compile Include="Patches\RemoveJittteryRotationPatch.cs" />
     <Compile Include="Patches\DisableFancyInteractions.cs" />
     <Compile Include="Patches\DropbackpackFix.cs" />
     <Compile Include="FikaPatches\FikaStatePatch.cs" />
