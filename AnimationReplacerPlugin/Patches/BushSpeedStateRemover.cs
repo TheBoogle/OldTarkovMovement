@@ -31,8 +31,8 @@ namespace OldTarkovMovement
                         return false;
                     }
 
-                    // Check if is a bush
-                    if (obstacle.gameObject.transform.parent.name.StartsWith("filbert"))
+                    // Check if is a bush (fuck u nikita for using SWAMP on bushes, and fuck me for being too lazy to properly check if its water or not)
+                    if (obstacle.HasSwampSpeedLimit)
                     {
                         return false;
                     }
