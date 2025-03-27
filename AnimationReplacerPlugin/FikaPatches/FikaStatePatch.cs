@@ -11,15 +11,15 @@ namespace OldTarkovMovement
         protected override MethodBase GetTargetMethod()
         {
             // Replace with the target method's type and name
-            return typeof(SprintStateClass).GetMethod("Enter", BindingFlags.Public | BindingFlags.Instance);
+            return typeof(SprintState).GetMethod("Enter", BindingFlags.Public | BindingFlags.Instance);
         }
 
         [PatchPostfix]
-        private static void Prefix(SprintStateClass __instance)
+        private static void Prefix(SprintState __instance)
         {
             try
             {
-                var MovementContextField = typeof(SprintStateClass).GetField("MovementContext", BindingFlags.NonPublic | BindingFlags.Instance);
+                var MovementContextField = typeof(SprintState).GetField("MovementContext", BindingFlags.NonPublic | BindingFlags.Instance);
                 MovementContext MovementContext = (MovementContext)MovementContextField.GetValue(__instance);
 
                 MovementContext.SetPatrol(true);
@@ -38,15 +38,15 @@ namespace OldTarkovMovement
         protected override MethodBase GetTargetMethod()
         {
             // Replace with the target method's type and name
-            return typeof(SprintStateClass).GetMethod("Exit", BindingFlags.Public | BindingFlags.Instance);
+            return typeof(SprintState).GetMethod("Exit", BindingFlags.Public | BindingFlags.Instance);
         }
 
         [PatchPostfix]
-        private static void Prefix(SprintStateClass __instance)
+        private static void Prefix(SprintState __instance)
         {
             try
             {
-                var MovementContextField = typeof(SprintStateClass).GetField("MovementContext", BindingFlags.NonPublic | BindingFlags.Instance);
+                var MovementContextField = typeof(SprintState).GetField("MovementContext", BindingFlags.NonPublic | BindingFlags.Instance);
                 MovementContext MovementContext = (MovementContext)MovementContextField.GetValue(__instance);
 
                 MovementContext.SetPatrol(false);

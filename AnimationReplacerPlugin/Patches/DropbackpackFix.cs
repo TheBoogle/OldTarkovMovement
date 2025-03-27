@@ -14,19 +14,19 @@ namespace OldTarkovMovement.Patches
         protected override MethodBase GetTargetMethod()
         {
             // Get the exact method by specifying parameter types
-            return typeof(Player.FirearmController.GClass1795)
+            return typeof(Player.FirearmController.GClass1761)
                 .GetMethod("Start", BindingFlags.Public | BindingFlags.Instance, null,
                            new Type[] { typeof(Item), typeof(Callback) }, null);
         }
 
         [PatchPrefix]
-        private static void Prefix(Player.FirearmController.GClass1795 __instance)
+        private static void Prefix(Player.FirearmController.GClass1761 __instance)
         {
             // Call the asynchronous method for delay
             DelayedFastForward(__instance);
         }
 
-        private static async void DelayedFastForward(Player.FirearmController.GClass1795 instance)
+        private static async void DelayedFastForward(Player.FirearmController.GClass1761 instance)
         {
             await Task.Delay(250);
 

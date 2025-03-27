@@ -5,7 +5,7 @@ using UnityEngine;
 namespace OldTarkovMovement.MovementStates
 {
     // Token: 0x02000EE2 RID: 3810
-    public class OldProneIdleState : ProneIdleStateClass
+    public class OldProneIdleState : ProneIdleState
     {
         // Token: 0x06005BE8 RID: 23528 RVA: 0x000D9F49 File Offset: 0x000D8149
         public OldProneIdleState(MovementContext movementContext) : base(movementContext)

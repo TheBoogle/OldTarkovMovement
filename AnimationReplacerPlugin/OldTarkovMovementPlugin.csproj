@@ -33,34 +33,37 @@
   <ItemGroup>
     <Reference Include="AnimationSystem.Types, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>W:\SPT311\EscapeFromTarkov_Data\Managed\AnimationSystem.Types.dll</HintPath>
+      <HintPath>W:\SPT3102\EscapeFromTarkov_Data\Managed\AnimationSystem.Types.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>W:\SPT311\EscapeFromTarkov_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>W:\SPT3102\EscapeFromTarkov_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx, Version=5.4.22.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>W:\SPT311\BepInEx\core\BepInEx.dll</HintPath>
+      <HintPath>W:\SPT3102\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="Comfort, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>W:\SPT311\EscapeFromTarkov_Data\Managed\Comfort.dll</HintPath>
+      <HintPath>W:\SPT3102\EscapeFromTarkov_Data\Managed\Comfort.dll</HintPath>
     </Reference>
-    <Reference Include="Fika.Core, Version=1.1.3.0, Culture=neutral, PublicKeyToken=1f37bed7e0de1980, processorArchitecture=MSIL">
+    <Reference Include="Fika.Core, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\Fika.Release.1.2.0.0\BepInEx\plugins\Fika.Core.dll</HintPath>
+      <HintPath>W:\SPT3102\BepInEx\plugins\Fika.Core.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="spt-common, Version=3.10.3.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="spt-common, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>W:\SPT311\BepInEx\plugins\spt\spt-common.dll</HintPath>
+      <HintPath>W:\SPT3102\BepInEx\plugins\spt\spt-common.dll</HintPath>
     </Reference>
-    <Reference Include="spt-reflection, Version=3.10.3.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="spt-custom">
+      <HintPath>W:\SPT3102\BepInEx\plugins\spt\spt-custom.dll</HintPath>
+    </Reference>
+    <Reference Include="spt-reflection, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>W:\SPT311\BepInEx\plugins\spt\spt-reflection.dll</HintPath>
+      <HintPath>W:\SPT3102\BepInEx\plugins\spt\spt-reflection.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -72,15 +75,15 @@
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>W:\SPT311\EscapeFromTarkov_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>W:\SPT3102\EscapeFromTarkov_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>W:\SPT311\EscapeFromTarkov_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>W:\SPT3102\EscapeFromTarkov_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>W:\SPTDevelopment\EscapeFromTarkov_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>W:\SPT3102\EscapeFromTarkov_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

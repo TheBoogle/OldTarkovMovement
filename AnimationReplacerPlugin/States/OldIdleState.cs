@@ -6,14 +6,14 @@ using UnityEngine;
 // Token: 0x02000ECF RID: 3791
 namespace OldTarkovMovement.MovementStates
 {
-    public class OldIdleState : IdleStateClass
+    public class OldIdleState : IdleState
     {
         public OldIdleState(MovementContext movementContext) : base(movementContext)
         {
             if (!this.MovementContext.IsAI)
             {
-                this.gclass755_0 = new GClass755();
-                this.gclass755_0.Init(movementContext);
+                this.gclass744_0 = new GClass744();
+                this.gclass744_0.Init(movementContext);
             }
         }
 
@@ -38,7 +38,7 @@ namespace OldTarkovMovement.MovementStates
             base.Enter(isFromSameState);
             this.MovementContext.EnableSprint(false);
             this.MovementContext.LeftStanceController.SetAnimatorLeftStanceToCacheFromBodyAction(false);
-            GClass755 gclass = this.gclass755_0;
+            GClass744 gclass = this.gclass744_0;
             if (gclass == null)
             {
                 return;
@@ -69,8 +69,8 @@ namespace OldTarkovMovement.MovementStates
 
         public override void Plant(bool enabled, bool multitool, float plantTime, Action<bool> action)
         {
-            PlantStateClass gclass;
-            if ((gclass = (this.MovementContext.PlantState as PlantStateClass)) != null)
+            GClass1867 gclass;
+            if ((gclass = (this.MovementContext.PlantState as GClass1867)) != null)
             {
                 gclass.PlantMultitool = multitool;
                 gclass.PlantTime = plantTime;
@@ -191,7 +191,7 @@ namespace OldTarkovMovement.MovementStates
 
         public void method_0(float deltaTime)
         {
-            GClass755 gclass = this.gclass755_0;
+            GClass744 gclass = this.gclass744_0;
             if (gclass == null)
             {
                 return;
