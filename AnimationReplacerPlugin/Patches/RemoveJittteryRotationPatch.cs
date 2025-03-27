@@ -51,6 +51,13 @@ namespace OldTarkovMovement.Patches
         [PatchPostfix]
         private static void Postfix(ProceduralWeaponAnimation __instance)
         {
+            // FUCK YOU, NIKITA
+            // WHAT THE FUCK IS THIS EVEN FOR
+            // THIS IS JUST SOME RANDOM MOTION SICKNESS BULLSHIT U ADDED
+            // WHY IS IT ONLY ACTIVATED WHEN USING THE APPLYROTATION() METHOD??
+            // I DON'T WANT THIS
+            // TAKE IT AWAY
+                
             __instance.HandsContainer.CameraRotation.InputIntensity = 0;
         }
     }
