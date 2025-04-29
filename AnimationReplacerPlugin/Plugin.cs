@@ -18,6 +18,7 @@ namespace OldTarkovMovement
         public bool NostalgiaMode { get; set; }
         public bool DoesAimingSlowYouDown { get; set; }
         public bool QuickTilting { get; set; }
+        public bool NoInertia { get; set; }
         public bool BotsUseOldMovement { get; set; }
         public bool DoBushesSlowYouDown { get; set; }
         public bool RemoveJitteryRotation { get; set; }
@@ -49,7 +50,11 @@ namespace OldTarkovMovement
 
             try
             {
-                new StateReplacer().Enable();
+                if (ModConfig.NoInertia)
+                {
+                    new StateReplacer().Enable();
+                }
+
                 new FixForSmoothMotherfuckingSpeed().Enable();
                 
                 if (!ModConfig.DoBushesSlowYouDown)
@@ -80,6 +85,12 @@ namespace OldTarkovMovement
                     new SetInteractInHandsPatch().Enable();
                     new DisableFancyInteractions().Enable();
                     new DropbackpackFix().Enable();
+
+                    if (!ModConfig.NoInertia)
+                    {
+                        new NostalgiaPatrolFixEnterPatch().Enable();
+                        new NostalgiaPatrolFixExitPatch().Enable();
+                    }
 
                     //new BlindfireWhileRunning().Enable();
 

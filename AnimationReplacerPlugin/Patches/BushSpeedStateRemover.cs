@@ -9,41 +9,30 @@ namespace OldTarkovMovement
 {
     public class BushSpeedStateRemover : ModulePatch
     {
-        protected override MethodBase GetTargetMethod()
-        {
-            // Replace with the target method's type and name
-            return typeof(MovementContext).GetMethod("OnEnterObstacle", BindingFlags.Public | BindingFlags.Instance);
-        }
+        protected override MethodBase GetTargetMethod() => typeof(MovementContext).GetMethod(nameof(MovementContext.OnEnterObstacle), BindingFlags.Public | BindingFlags.Instance);
 
         [PatchPrefix]
         private static bool Prefix(MovementContext __instance, ObstacleCollider obstacle)
         {
             try
             {
-                var obstaclesField = typeof(MovementContext).GetField("_enteredObstacles", BindingFlags.NonPublic | BindingFlags.Instance);
+                var Obstacles = __instance._enteredObstacles;
 
-                if (obstaclesField != null)
+                if (Obstacles.IndexOf(obstacle) != -1)
                 {
-                    List<ObstacleCollider> Obstacles = obstaclesField.GetValue(__instance) as List<ObstacleCollider>;
-
-                    if (Obstacles.IndexOf(obstacle) != -1)
-                    {
-                        return false;
-                    }
-
-                    // Check if is a bush (fuck u nikita for using SWAMP on bushes, and fuck me for being too lazy to properly check if its water or not)
-                    if (obstacle.HasSwampSpeedLimit)
-                    {
-                        return false;
-                    }
-
-                    Obstacles.Add(obstacle);
-                    __instance.method_0();
-
                     return false;
                 }
 
-                return true;
+                // Check if is a bush (fuck u nikita for using SWAMP on bushes, and fuck me for being too lazy to properly check if its water or not)
+                if (obstacle.HasSwampSpeedLimit)
+                {
+                    return false;
+                }
+
+                Obstacles.Add(obstacle);
+                __instance.method_0();
+
+                return false;
             }
             catch (Exception ex)
             {
