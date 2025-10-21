@@ -24,7 +24,7 @@ namespace OldTarkovMovement
         public bool RemoveJitteryRotation { get; set; }
     }
 
-    [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.0.6")]
+    [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.1.1")]
     public class Plugin : BaseUnityPlugin
     {
         public static OldTarkovMovementConfig ModConfig;
