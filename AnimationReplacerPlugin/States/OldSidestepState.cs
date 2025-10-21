@@ -17,7 +17,7 @@ namespace OldTarkovMovement.MovementStates
             {
                 float num = this.MovementContext.Yaw - this.MovementContext.HandsToBodyAngle;
                 Vector2 yawLimit = new Vector2(num - this.MovementContext.TrunkRotationLimit + 1f, num + this.MovementContext.TrunkRotationLimit - 1f);
-                this.MovementContext.SetRotationLimit(yawLimit, Player.GClass1772.STAND_POSE_ROTATION_PITCH_RANGE);
+                this.MovementContext.SetRotationLimit(yawLimit, Player.PlayerMovementConstantsClass.STAND_POSE_ROTATION_PITCH_RANGE);
             }
             this.MovementContext.SetTilt(0f, false);
         }
@@ -27,7 +27,7 @@ namespace OldTarkovMovement.MovementStates
         {
             if (!toSameState)
             {
-                this.MovementContext.SetRotationLimit(Player.GClass1772.FULL_YAW_RANGE, Player.GClass1772.STAND_POSE_ROTATION_PITCH_RANGE);
+                this.MovementContext.SetRotationLimit(Player.PlayerMovementConstantsClass.FULL_YAW_RANGE, Player.PlayerMovementConstantsClass.STAND_POSE_ROTATION_PITCH_RANGE);
                 this.SetStep(0);
             }
             base.Exit(toSameState);

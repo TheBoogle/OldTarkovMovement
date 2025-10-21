@@ -102,7 +102,7 @@ namespace OldTarkovMovement.MovementStates
             }
             if (flag && Mathf.Abs(this.MovementContext.HandsToBodyAngle) > this.MovementContext.TrunkRotationLimit)
             {
-                this.ProcessUpperbodyRotation(deltaTime);
+                this.ProcessUpperbodyRotation(deltaTime, this.MovementContext.IsAI);
             }
             if (this.bool_2)
             {

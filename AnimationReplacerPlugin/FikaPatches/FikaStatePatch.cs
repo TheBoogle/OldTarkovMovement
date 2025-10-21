@@ -1,5 +1,5 @@
 ﻿using EFT;
-using Fika.Core.Coop.ObservedClasses;
+using Fika.Core.Main.ObservedClasses;
 using SPT.Reflection.Patching;
 using System;
 using System.Reflection;

@@ -12,8 +12,8 @@ namespace OldTarkovMovement.MovementStates
         {
             if (!this.MovementContext.IsAI)
             {
-                this.gclass755_0 = new GClass755();
-                this.gclass755_0.Init(movementContext);
+                this.GClass777_0 = new GClass777();
+                this.GClass777_0.Init(movementContext);
             }
         }
 
@@ -38,7 +38,7 @@ namespace OldTarkovMovement.MovementStates
             base.Enter(isFromSameState);
             this.MovementContext.EnableSprint(false);
             this.MovementContext.LeftStanceController.SetAnimatorLeftStanceToCacheFromBodyAction(false);
-            GClass755 gclass = this.gclass755_0;
+            GClass777 gclass = this.GClass777_0;
             if (gclass == null)
             {
                 return;
@@ -191,12 +191,12 @@ namespace OldTarkovMovement.MovementStates
 
         public void method_0(float deltaTime)
         {
-            GClass755 gclass = this.gclass755_0;
-            if (gclass == null)
+            GClass777 gclass777_ = this.Gclass777_0;
+            if (gclass777_ == null)
             {
                 return;
             }
-            gclass.ProcessAnimatorStep(deltaTime, this.Type);
+            gclass777_.ProcessAnimatorStep(deltaTime, this.Type);
         }
 
         // Token: 0x04005683 RID: 22147
@@ -208,6 +208,6 @@ namespace OldTarkovMovement.MovementStates
         // Token: 0x04005685 RID: 22149
         private const float float_0 = 1E-05f;
 
-        private GClass744 gclass744_0;
+        private GClass777 GClass777_0;
     }
 }

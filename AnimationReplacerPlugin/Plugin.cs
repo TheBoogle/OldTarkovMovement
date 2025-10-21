@@ -39,14 +39,14 @@ namespace OldTarkovMovement
         public void Awake()
         {
             ModConfig = UpdateInfoFromServer<OldTarkovMovementConfig>("/OldTarkovMovement/GetConfig");
-            if (!ModConfig.NostalgiaMode)
-            {
-                Logger.LogInfo("Using Modern Variant");
-            }
-            else
-            {
-                Logger.LogInfo("Using Old Variant");
-            }
+            //if (!ModConfig.NostalgiaMode)
+            //{
+            //    Logger.LogInfo("Using Modern Variant");
+            //}
+            //else
+            //{
+            //    Logger.LogInfo("Using Old Variant");
+            //}
 
             try
             {
@@ -55,7 +55,7 @@ namespace OldTarkovMovement
                     new StateReplacer().Enable();
                 }
 
-                new FixForSmoothMotherfuckingSpeed().Enable();
+                new SmoothSpeedFix().Enable();
                 
                 if (!ModConfig.DoBushesSlowYouDown)
                 {

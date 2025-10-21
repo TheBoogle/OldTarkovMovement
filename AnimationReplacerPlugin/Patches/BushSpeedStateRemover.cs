@@ -16,7 +16,7 @@ namespace OldTarkovMovement
         {
             try
             {
-                var Obstacles = __instance._enteredObstacles;
+                var Obstacles = __instance.EnteredObstacles;
 
                 if (Obstacles.IndexOf(obstacle) != -1)
                 {
