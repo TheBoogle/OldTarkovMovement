@@ -3,7 +3,7 @@ using OldTarkovMovement.Patches;
 using BepInEx;
 using System;
 using BepInEx.Bootstrap;
-using EFT;
+using EFT;s
 using System.Threading.Tasks;
 using SPT.Common.Http;
 using Newtonsoft.Json;
@@ -24,7 +24,7 @@ namespace OldTarkovMovement
         public bool RemoveJitteryRotation { get; set; }
     }
 
-    [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.1.1")]
+    [BepInPlugin("com.boogle.oldtarkovmovement", "Old Tarkov Movement", "1.1.2")]
     public class Plugin : BaseUnityPlugin
     {
         public static OldTarkovMovementConfig ModConfig;

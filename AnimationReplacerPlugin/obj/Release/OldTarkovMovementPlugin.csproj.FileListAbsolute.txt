@@ -4,3 +4,9 @@ C:\Users\thebo\source\repos\TheBoogle\OldTarkovMovement\AnimationReplacerPlugin\
 C:\Users\thebo\source\repos\TheBoogle\OldTarkovMovement\AnimationReplacerPlugin\obj\Release\OldTarkovMovementPlugin.csproj.CoreCompileInputs.cache
 C:\Users\thebo\source\repos\TheBoogle\OldTarkovMovement\AnimationReplacerPlugin\obj\Release\OldTarkovMovement.dll
 C:\Users\thebo\source\repos\TheBoogle\OldTarkovMovement\AnimationReplacerPlugin\obj\Release\OldTarkovMovement.pdb
+C:\Users\Sam\source\repos\TheBoogle\OldTarkovMovement\AnimationReplacerPlugin\obj\Release\OldTarkovMovementPlugin.csproj.AssemblyReference.cache
+C:\Users\Sam\source\repos\TheBoogle\OldTarkovMovement\AnimationReplacerPlugin\obj\Release\OldTarkovMovementPlugin.csproj.CoreCompileInputs.cache
+C:\Users\Sam\source\repos\TheBoogle\OldTarkovMovement\AnimationReplacerPlugin\obj\Release\OldTarkovMovement.dll
+C:\Users\Sam\source\repos\TheBoogle\OldTarkovMovement\AnimationReplacerPlugin\obj\Release\OldTarkovMovement.pdb
+C:\Users\Sam\source\repos\TheBoogle\OldTarkovMovement\AnimationReplacerPlugin\bin\Release\OldTarkovMovement.dll
+C:\Users\Sam\source\repos\TheBoogle\OldTarkovMovement\AnimationReplacerPlugin\bin\Release\OldTarkovMovement.pdb
